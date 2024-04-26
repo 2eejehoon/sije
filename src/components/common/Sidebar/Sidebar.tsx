@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import SiderbarUserinfo from "./SidebarUserInfo";
 import SidebarNavigation from "./SidebarNavigation";
-import monolog from "/monolog.png";
+import monolog from "/png/monolog.png";
 
 const Sidebar = () => {
   return (
