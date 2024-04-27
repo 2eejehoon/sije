@@ -71,6 +71,7 @@ const AnalysisCarousel = () => {
 };
 
 const Wrapper = styled.div`
+  flex: 4 1 0;
   padding: 24px;
   width: 440px;
   border: 1px solid #e6e7e9;
