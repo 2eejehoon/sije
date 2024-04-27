@@ -29,15 +29,16 @@ const AnalysisCarousel = () => {
         slidesToShow={1}
         slidesToScroll={1}
         arrows={false}
+        adaptiveHeight={false}
       >
         {[1, 2, 3, 4, 5].map((_, index) => {
           return (
             <Slide key={index}>
               <PrevButton onClick={onPrevClick} />
               <NextButton onClick={onNextClick} />
-              <Flexbox>
-                <ProcessDescription>
-                  <ProcessNumber>#38</ProcessNumber>
+              <FlexRow>
+                <FlexColumn>
+                  <Text>#38</Text>
                   <div>
                     <span>Back - Attach care label + size label</span>
                   </div>
@@ -50,14 +51,14 @@ const AnalysisCarousel = () => {
                     <Divider />
                     <span>A</span>
                   </TagContainer>
-                </ProcessDescription>
-                <Profile>
+                </FlexColumn>
+                <FlexColumn>
                   <ImgContainer>
                     <Img src={kimsije} />
                   </ImgContainer>
-                  <ProfileName>Sije Kim</ProfileName>
-                </Profile>
-              </Flexbox>
+                  <Name>Sije Kim</Name>
+                </FlexColumn>
+              </FlexRow>
             </Slide>
           );
         })}
@@ -68,7 +69,6 @@ const AnalysisCarousel = () => {
 
 const Wrapper = styled.div`
   flex: 4 1 0;
-  padding: 24px;
   width: 440px;
   border: 1px solid #e6e7e9;
   border-radius: 8px;
@@ -78,18 +78,20 @@ const Slide = styled.div`
   position: relative;
 `;
 
-const Flexbox = styled.div`
+const FlexRow = styled.div`
+  padding: 12px;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  min-height: 120px;
 `;
 
-const ProcessDescription = styled.div`
+const FlexColumn = styled.div`
   display: flex;
   flex-direction: column;
 `;
 
-const ProcessNumber = styled.span`
+const Text = styled.span`
   width: 32px;
   display: flex;
   justify-content: center;
@@ -121,8 +123,6 @@ const Divider = styled.span`
   }
 `;
 
-const Profile = styled.div``;
-
 const ImgContainer = styled.div`
   position: relative;
   width: 46px;
@@ -136,7 +136,7 @@ const Img = styled.img`
   object-fit: cover;
 `;
 
-const ProfileName = styled.span`
+const Name = styled.span`
   color: #3e3f41;
   font-size: 13px;
   font-weight: 500;
@@ -148,7 +148,7 @@ const PrevButton = styled(_PrevButton)`
   width: 20px;
   height: 20px;
   top: 40%;
-  left: -5px;
+  left: 10px;
 `;
 
 const NextButton = styled(_NextButton)`
@@ -156,7 +156,7 @@ const NextButton = styled(_NextButton)`
   width: 20px;
   height: 20px;
   top: 40%;
-  right: -5px;
+  right: 10px;
 `;
 
 export default AnalysisCarousel;
