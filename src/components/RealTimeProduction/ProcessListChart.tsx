@@ -6,7 +6,6 @@ import { useState } from "react";
 const data = processListObj.processList.map((process) => {
   return {
     ...process,
-    processName: process.processName.replace("process", "#"),
     expectOutput: process.expectOutput - process.output,
   };
 });
@@ -22,13 +21,30 @@ const ProcessListChart = () => {
     setActiveIndex(-1);
   };
 
+  // @ts-expect-error tick -> (props:any) => ReactElement
+  const customTick = ({ x, y, payload }: any) => {
+    return (
+      <text
+        x={x}
+        y={y}
+        dy={16}
+        textAnchor="middle"
+        fill={activeIndex === payload.index ? "#3E3F41" : "#DEDFDF"}
+        fontSize={14}
+        fontWeight={400}
+      >
+        {payload.value.replace("process", "#")}
+      </text>
+    );
+  };
+
   return (
     <Wrapper>
       <ResponsiveContainer width={"100%"} height={"100%"}>
         <ComposedChart data={data} margin={{ top: 50 }}>
-          <XAxis dataKey="processName" />
+          <XAxis dataKey="processName" tick={customTick} />
           <YAxis label={{ value: "(pcs)", angle: 0, position: "top" }} tick={false} />
-          <Legend wrapperStyle={{ top: 0 }} />
+          <Legend wrapperStyle={{ top: 30, left: 700 }} />
           <Bar
             isAnimationActive={false}
             stackId="id"
