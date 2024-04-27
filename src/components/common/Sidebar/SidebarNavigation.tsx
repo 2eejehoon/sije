@@ -1,11 +1,20 @@
+import { Link, useLocation } from "react-router-dom";
 import styled from "styled-components";
 
 const SidebarNavigation = () => {
+  const location = useLocation();
+
+  console.log(location);
+
   return (
     <Wrapper>
       <List>
-        <ListItem>Line Management</ListItem>
-        <ListItem>Real-Time Prod.</ListItem>
+        <Link to={"/line-management"}>
+          <ListItem $isActive={location.pathname === "/line-management"}>Line Management</ListItem>
+        </Link>
+        <Link to={"/real-time-production"}>
+          <ListItem $isActive={location.pathname === "/real-time-production"}>Real-Time Prod.</ListItem>
+        </Link>
       </List>
     </Wrapper>
   );
@@ -24,14 +33,14 @@ const List = styled.ul`
   align-items: flex-start;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.li<{ $isActive: boolean }>`
   width: 170px;
   height: 36px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: ${({ $isActive }) => ($isActive ? "#ffffff" : "#8C8F94")};
   font-size: 14px;
   font-weight: 400;
   line-height: 19.6px;
