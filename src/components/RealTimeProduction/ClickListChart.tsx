@@ -32,7 +32,7 @@ const ClickListChart = () => {
           <XAxis dataKey="createdAt" tick={customTick} />
           <YAxis tick={false} label={{ value: "(SMC)", position: "top" }} />
           <Tooltip content={<CustomTooltipContent />} />
-          <Legend wrapperStyle={{ top: 30, left: 700 }} />
+          <Legend wrapperStyle={{ top: 30 }} />
           <Line dataKey="value" stroke="#5550FF" />
         </LineChart>
       </ResponsiveContainer>

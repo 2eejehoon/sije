@@ -43,8 +43,8 @@ const ProcessListChart = () => {
       <ResponsiveContainer width={"100%"} height={"100%"}>
         <ComposedChart data={data} margin={{ top: 50 }}>
           <XAxis dataKey="processName" tick={customTick} />
-          <YAxis label={{ value: "(pcs)", angle: 0, position: "top" }} tick={false} />
-          <Legend wrapperStyle={{ top: 30, left: 700 }} />
+          <YAxis label={{ value: "(pcs)", position: "top" }} tick={false} />
+          <Legend wrapperStyle={{ top: 30 }} />
           <Bar
             isAnimationActive={false}
             stackId="id"
@@ -53,7 +53,8 @@ const ProcessListChart = () => {
             barSize={14}
             activeIndex={activeIndex}
             onMouseEnter={handleMouseEnter}
-            activeBar={<Rectangle isAnimationActive={false} fill="#FF9B3F" onMouseLeave={handleMouseLeave} />}
+            onMouseLeave={handleMouseLeave}
+            activeBar={<Rectangle isAnimationActive={false} fill="#FF9B3F" />}
           />
           <Bar
             isAnimationActive={false}
@@ -66,7 +67,8 @@ const ProcessListChart = () => {
             strokeDasharray="5 5"
             activeIndex={activeIndex}
             onMouseEnter={handleMouseEnter}
-            activeBar={<Rectangle isAnimationActive={false} fill="#5550FF" onMouseLeave={handleMouseLeave} />}
+            onMouseLeave={handleMouseLeave}
+            activeBar={<Rectangle isAnimationActive={false} fill="#5550FF" />}
           />
         </ComposedChart>
       </ResponsiveContainer>
