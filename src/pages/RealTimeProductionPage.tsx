@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Filterbar from "../components/Filterbar";
 import RealTimeProductionHeader from "../components/RealTimeProductionHeader";
 import BaseLayout from "../layouts/BaseLayout";
-import OutlineBoard from "../components/OutlineBoard";
+import RealTimeOutline from "../components/RealTimeOutline";
 import ProcessListChart from "../components/ProcessListChart";
 import Analysis from "../components/Analysis";
 
@@ -12,7 +12,7 @@ const RealTimeProductionPage = () => {
       <RealTimeProductionHeader />
       <Wrapper>
         <Filterbar />
-        <OutlineBoard />
+        <RealTimeOutline />
         <ProcessListChart />
         <Analysis />
       </Wrapper>

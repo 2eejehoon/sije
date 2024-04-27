@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-const OutlineBoard = () => {
+const RealTimeOutline = () => {
   const target = 600;
   const output = 495;
   const difference = output - target;
@@ -58,4 +58,4 @@ const Amount = styled.span`
   line-height: 44.8px;
 `;
 
-export default OutlineBoard;
+export default RealTimeOutline;
