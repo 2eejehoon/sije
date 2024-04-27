@@ -15,7 +15,7 @@ export const formatTimeWithSeconds = (date: Date) => {
 
   const formatHours = hours < 10 ? "0" + hours : hours;
   const formatMinutes = minutes < 10 ? "0" + minutes : minutes;
-  const formatSeconds = seconds < 10 ? "0" + minutes : minutes;
+  const formatSeconds = seconds < 10 ? "0" + seconds : seconds;
 
   return formatHours + ":" + formatMinutes + ":" + formatSeconds;
 };
