@@ -39,9 +39,8 @@ const FlexItem = styled.div`
   flex-direction: column;
   gap: 24px;
   padding: 24px;
-  border: 1px solid #5550ff1a;
   border-radius: 10px;
-  background: linear-gradient(90deg, #5e77f6, #80e3e3);
+  background: linear-gradient(107.56deg, rgb(94, 119, 246) 0%, rgb(128, 227, 227) 100%);
   background-color: rgba(255, 255, 255, 0.1);
 `;
 
