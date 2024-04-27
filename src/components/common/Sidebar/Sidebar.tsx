@@ -2,8 +2,11 @@ import styled from "styled-components";
 import SiderbarUserinfo from "./SidebarUserInfo";
 import SidebarNavigation from "./SidebarNavigation";
 import monolog from "/png/monolog.png";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
+  const location = useLocation();
+
   return (
     <Wrapper>
       <SidebarHeader></SidebarHeader>
@@ -13,12 +16,16 @@ const Sidebar = () => {
       </SidebarMain>
       <SidebarFooter>
         <FooterList>
-          <FooterListItem>
-            <span>Master</span>
-          </FooterListItem>
-          <FooterListItem>
-            <span>Thread</span>
-          </FooterListItem>
+          <Link to="/master">
+            <FooterListItem $isActive={location.pathname === "/master"}>
+              <span>Master</span>
+            </FooterListItem>
+          </Link>
+          <Link to="/thread">
+            <FooterListItem $isActive={location.pathname === "/thread"}>
+              <span>Thread</span>
+            </FooterListItem>
+          </Link>
           <FooterListItem>
             <span>Log out</span>
           </FooterListItem>
@@ -72,14 +79,14 @@ const FooterList = styled.ul`
   margin: 0;
 `;
 
-const FooterListItem = styled.li`
+const FooterListItem = styled.li<{ $isActive?: boolean }>`
   width: 170px;
   height: 36px;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   gap: 8px;
-  color: #ffffff;
+  color: ${({ $isActive = false }) => ($isActive ? "#ffffff" : "#8C8F94")};
   font-weight: 500;
   font-size: 14px;
   line-height: 19.6px;
