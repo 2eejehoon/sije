@@ -14,9 +14,8 @@ const total = Object.values(processAnalysisObj.processAnalysis.best).reduce((acc
 const BestChart = () => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const renderActiveShape = (props: unknown) => {
-    // @ts-expect-error: renderActiveShape (props: unknown) => JSX.ELEMENT
-    const { cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload } = props;
+  // @ts-expect-error: renderActiveShape (props: unknown) => JSX.ELEMENT
+  const renderActiveShape = ({ cx, cy, innerRadius, outerRadius, startAngle, endAngle, fill, payload }: unknown) => {
     const value = ((payload.value / total) * 100).toFixed(0);
 
     return (
