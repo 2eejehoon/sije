@@ -6,20 +6,17 @@ import _Master from "../../../assets/svg/master.svg?react";
 import _Thread from "../../../assets/svg/thread.svg?react";
 import _Logout from "../../../assets/svg/logout.svg?react";
 import monolog from "/png/monolog.png";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
-  const router = useNavigate();
-
-  const handleArrowLeftClick = () => {
-    router("/");
-  };
 
   return (
     <Wrapper>
       <SidebarHeader>
-        <ArrowLeft onClick={handleArrowLeftClick} />
+        <Link to="/">
+          <ArrowLeft />
+        </Link>
       </SidebarHeader>
       <SidebarMain>
         <SiderbarUserinfo />
