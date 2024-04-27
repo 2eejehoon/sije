@@ -26,7 +26,7 @@ const ProcessListChart = () => {
       <ResponsiveContainer width={"100%"} height={"100%"}>
         <ComposedChart data={data} margin={{ top: 50 }}>
           <XAxis dataKey="processName" />
-          <YAxis label={{ value: "(pcs)", angle: 0, position: "insideTopLeft" }} />
+          <YAxis label={{ value: "(pcs)", angle: 0, position: "top" }} />
           <Legend wrapperStyle={{ top: 0 }} />
           <Bar
             isAnimationActive={false}
