@@ -1,9 +1,9 @@
 import styled from "styled-components";
-import _Output from "../../assets/svg/output.svg?react";
-import _Efficiency from "../../assets/svg/efficiency.svg?react";
-import _Loss from "../../assets/svg/loss.svg?react";
-import _Productivity from "../../assets/svg/productivity.svg?react";
-import processAnalysisObj from "../../../public/data/process-analysis.json";
+import _Output from "../assets/svg/output.svg?react";
+import _Efficiency from "../assets/svg/efficiency.svg?react";
+import _Loss from "../assets/svg/loss.svg?react";
+import _Productivity from "../assets/svg/productivity.svg?react";
+import processAnalysisObj from "../../public/data/process-analysis.json";
 
 const data = processAnalysisObj.processAnalysis;
 

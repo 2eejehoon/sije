@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import Header from "../common/Header/Header";
+import Header from "./Header";
 
 const RealTimeProductionHeader = () => {
   return (

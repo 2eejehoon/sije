@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import Filterbar from "../components/RealTimeProduction/Filterbar";
-import RealTimeProductionHeader from "../components/RealTimeProduction/RealTimeProductionHeader";
+import Filterbar from "../components/Filterbar";
+import RealTimeProductionHeader from "../components/RealTimeProductionHeader";
 import BaseLayout from "../layouts/BaseLayout";
-import OutlineBoard from "../components/RealTimeProduction/OutlineBoard";
-import ProcessListChart from "../components/RealTimeProduction/ProcessListChart";
-import Analysis from "../components/RealTimeProduction/Analysis";
+import OutlineBoard from "../components/OutlineBoard";
+import ProcessListChart from "../components/ProcessListChart";
+import Analysis from "../components/Analysis";
 
 const RealTimeProductionPage = () => {
   return (

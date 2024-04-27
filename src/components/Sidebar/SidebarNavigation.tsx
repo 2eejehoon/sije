@@ -1,5 +1,5 @@
 import { Link, useLocation } from "react-router-dom";
-import _Chart from "../../../assets/svg/chart.svg?react";
+import _Chart from "../../assets/svg/chart.svg?react";
 import styled from "styled-components";
 
 const SidebarNavigation = () => {

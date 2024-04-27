@@ -2,8 +2,8 @@ import { useRef } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 import kimsije from "/png/kimsije.png";
-import _PrevButton from "../../assets/svg/carousel-prev-button.svg?react";
-import _NextButton from "../../assets/svg/carousel-next-button.svg?react";
+import _PrevButton from "../assets/svg/carousel-prev-button.svg?react";
+import _NextButton from "../assets/svg/carousel-next-button.svg?react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 

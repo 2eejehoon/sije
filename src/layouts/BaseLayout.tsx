@@ -1,5 +1,5 @@
 import { PropsWithChildren } from "react";
-import Sidebar from "../components/common/Sidebar/Sidebar";
+import Sidebar from "../components/Sidebar/Sidebar";
 import styled from "styled-components";
 
 type BaseLayoutProps = PropsWithChildren;

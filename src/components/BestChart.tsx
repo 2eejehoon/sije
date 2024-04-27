@@ -1,15 +1,15 @@
 import styled from "styled-components";
-import processAnalysisObj from "../../../public/data/process-analysis.json";
+import processAnalysisObj from "../../public/data/process-analysis.json";
 import { PieChart, Pie, ResponsiveContainer, Sector } from "recharts";
 import { useState } from "react";
 
-const COLORS = ["#F65959", "#DEDFDF"];
+const COLORS = ["#5550FF", "#DEDFDF"];
 
-const data = Object.entries(processAnalysisObj.processAnalysis.worst).map(([key, value], index) => {
+const data = Object.entries(processAnalysisObj.processAnalysis.best).map(([key, value], index) => {
   return { name: key, value: value, fill: COLORS[index] };
 });
 
-const total = Object.values(processAnalysisObj.processAnalysis.worst).reduce((acc, cur) => acc + cur, 0);
+const total = Object.values(processAnalysisObj.processAnalysis.best).reduce((acc, cur) => acc + cur, 0);
 
 const BestChart = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -57,7 +57,7 @@ const BestChart = () => {
         </PieChart>
       </ResponsiveContainer>
       <Legend>
-        <Title>Worst</Title>
+        <Title>Best</Title>
         {data.map(({ name, value, fill }, index) => {
           return (
             <FlexRow key={index}>
@@ -88,7 +88,7 @@ const Legend = styled.div`
 `;
 
 const Title = styled.h6`
-  color: #f65959;
+  color: #5550ff;
   font-weight: 600;
   font-size: 15px;
   line-height: 21px;

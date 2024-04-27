@@ -1,10 +1,10 @@
 import styled from "styled-components";
 import SiderbarUserinfo from "./SidebarUserInfo";
 import SidebarNavigation from "./SidebarNavigation";
-import _ArrowLeft from "../../../assets/svg/arrow-left.svg?react";
-import _Master from "../../../assets/svg/master.svg?react";
-import _Thread from "../../../assets/svg/thread.svg?react";
-import _Logout from "../../../assets/svg/logout.svg?react";
+import _ArrowLeft from "../../assets/svg/arrow-left.svg?react";
+import _Master from "../../assets/svg/master.svg?react";
+import _Thread from "../../assets/svg/thread.svg?react";
+import _Logout from "../../assets/svg/logout.svg?react";
 import monolog from "/png/monolog.png";
 import { Link, useLocation } from "react-router-dom";
 

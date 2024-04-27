@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import clickListObj from "../../../public/data/click-list.json";
+import clickListObj from "../../public/data/click-list.json";
 import { LineChart, Line, XAxis, YAxis, Tooltip, Legend, ResponsiveContainer } from "recharts";
-import { formatTime, formatTimeWithSeconds } from "../../utils/formatTime";
+import { formatTime, formatTimeWithSeconds } from "../utils/formatTime";
 
 const data = clickListObj.clickList.map((process) => {
   return {

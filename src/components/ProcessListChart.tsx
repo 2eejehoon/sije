@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import processListObj from "../../../public/data/process-list.json";
+import processListObj from "../../public/data/process-list.json";
 import { Bar, XAxis, YAxis, ResponsiveContainer, ComposedChart, Legend, Rectangle } from "recharts";
 import { useState } from "react";
 
