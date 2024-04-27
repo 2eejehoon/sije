@@ -1,11 +1,10 @@
 import styled from "styled-components";
-import SiderbarUserinfo from "./SidebarUserInfo";
-import SidebarNavigation from "./SidebarNavigation";
-import _ArrowLeft from "../../assets/svg/arrow-left.svg?react";
-import _Master from "../../assets/svg/master.svg?react";
-import _Thread from "../../assets/svg/thread.svg?react";
-import _Logout from "../../assets/svg/logout.svg?react";
-import _Menu from "../../assets/svg/sidebar-menu.svg?react";
+import _ArrowLeft from "../assets/svg/arrow-left.svg?react";
+import _Chart from "../assets/svg/chart.svg?react";
+import _Master from "../assets/svg/master.svg?react";
+import _Thread from "../assets/svg/thread.svg?react";
+import _Logout from "../assets/svg/logout.svg?react";
+import _Menu from "../assets/svg/sidebar-menu.svg?react";
 import monolog from "/png/monolog.png";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
@@ -21,8 +20,30 @@ const Sidebar = () => {
           <ArrowLeft onClick={() => setIsOpen(false)} />
         </SidebarHeader>
         <SidebarMain>
-          <SiderbarUserinfo />
-          <SidebarNavigation />
+          <UserInfo>
+            <UserImage>
+              <img />
+            </UserImage>
+            <InfoContainer>
+              <UserName>User Name</UserName>
+              <UserPosition>employee/sales</UserPosition>
+              <UserEmail>sales@youngwon.com</UserEmail>
+            </InfoContainer>
+          </UserInfo>
+          <MainList>
+            <Link to={"/line-management"}>
+              <MainListItem $isActive={location.pathname === "/line-management"}>
+                <Chart $isActive={location.pathname === "/line-management"} />
+                <span>Line Management</span>
+              </MainListItem>
+            </Link>
+            <Link to={"/real-time-production"}>
+              <MainListItem $isActive={location.pathname === "/real-time-production"}>
+                <Chart $isActive={location.pathname === "/real-time-production"} />
+                <span>Real-Time Prod.</span>
+              </MainListItem>
+            </Link>
+          </MainList>
         </SidebarMain>
         <SidebarFooter>
           <FooterList>
@@ -100,6 +121,88 @@ const SidebarFooter = styled.div`
   align-items: center;
   width: 100%;
   height: 200px;
+`;
+
+const UserInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 140px;
+  border-radius: 10px;
+  padding: 11px 24px 11px 24px;
+  background-color: #3e3f41;
+  gap: 14px;
+`;
+
+const InfoContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2px;
+`;
+
+const UserImage = styled.div`
+  position: relative;
+  width: 46px;
+  height: 46px;
+  background-color: #8c8f94;
+  border-radius: 50%;
+`;
+
+const UserName = styled.div`
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 19.6px;
+`;
+
+const UserPosition = styled.div`
+  color: #8c8f94;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 16.8px;
+`;
+
+const UserEmail = styled.div`
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 400;
+  text-align: center;
+  line-height: 16.8px;
+`;
+
+const Chart = styled(_Chart)<{ $isActive: boolean }>`
+  width: 20px;
+  height: 20px;
+  fill: ${({ $isActive }) => ($isActive ? "#ffffff" : "#8C8F94")};
+`;
+
+const MainList = styled.ul`
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+`;
+
+const MainListItem = styled.li<{ $isActive: boolean }>`
+  width: 170px;
+  height: 36px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 8px;
+  color: ${({ $isActive }) => ($isActive ? "#ffffff" : "#8C8F94")};
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 19.6px;
 `;
 
 const FooterList = styled.ul`
