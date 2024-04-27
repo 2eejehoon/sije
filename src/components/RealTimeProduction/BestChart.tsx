@@ -58,9 +58,9 @@ const BestChart = () => {
       </ResponsiveContainer>
       <Legend>
         <Title>Best</Title>
-        {data.map(({ name, value, fill }) => {
+        {data.map(({ name, value, fill }, index) => {
           return (
-            <FlexRow>
+            <FlexRow key={index}>
               <LegenColor $bgColor={fill} />
               <LegendLabel>{name}</LegendLabel>
               <LegendValue>{value}</LegendValue>

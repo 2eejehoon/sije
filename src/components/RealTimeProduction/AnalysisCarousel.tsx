@@ -30,9 +30,9 @@ const AnalysisCarousel = () => {
         slidesToScroll={1}
         arrows={false}
       >
-        {[1, 2, 3, 4, 5].map(() => {
+        {[1, 2, 3, 4, 5].map((_, index) => {
           return (
-            <Slide>
+            <Slide key={index}>
               <PrevButton onClick={onPrevClick}>
                 <img src={carouselPrevButton} alt="carousel-prev-button" />
               </PrevButton>
