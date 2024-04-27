@@ -5,47 +5,56 @@ import _ArrowLeft from "../../assets/svg/arrow-left.svg?react";
 import _Master from "../../assets/svg/master.svg?react";
 import _Thread from "../../assets/svg/thread.svg?react";
 import _Logout from "../../assets/svg/logout.svg?react";
+import _Menu from "../../assets/svg/sidebar-menu.svg?react";
 import monolog from "/png/monolog.png";
 import { Link, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const Sidebar = () => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = useState(true);
+
+  if (isOpen) {
+    return (
+      <Wrapper>
+        <SidebarHeader>
+          <ArrowLeft onClick={() => setIsOpen(false)} />
+        </SidebarHeader>
+        <SidebarMain>
+          <SiderbarUserinfo />
+          <SidebarNavigation />
+        </SidebarMain>
+        <SidebarFooter>
+          <FooterList>
+            <Link to="/master">
+              <FooterListItem $isActive={location.pathname === "/master"}>
+                <Master $isActive={location.pathname === "/master"} />
+                <span>Master</span>
+              </FooterListItem>
+            </Link>
+            <Link to="/thread">
+              <FooterListItem $isActive={location.pathname === "/thread"}>
+                <Thread $isActive={location.pathname === "/thread"} />
+                <span>Thread</span>
+              </FooterListItem>
+            </Link>
+            <FooterListItem>
+              <Logout />
+              <span>Log out</span>
+            </FooterListItem>
+          </FooterList>
+        </SidebarFooter>
+        <LogoContainer>
+          <LogoImage src={monolog} alt="monolog-logo" />
+        </LogoContainer>
+      </Wrapper>
+    );
+  }
 
   return (
-    <Wrapper>
-      <SidebarHeader>
-        <Link to="/">
-          <ArrowLeft />
-        </Link>
-      </SidebarHeader>
-      <SidebarMain>
-        <SiderbarUserinfo />
-        <SidebarNavigation />
-      </SidebarMain>
-      <SidebarFooter>
-        <FooterList>
-          <Link to="/master">
-            <FooterListItem $isActive={location.pathname === "/master"}>
-              <Master $isActive={location.pathname === "/master"} />
-              <span>Master</span>
-            </FooterListItem>
-          </Link>
-          <Link to="/thread">
-            <FooterListItem $isActive={location.pathname === "/thread"}>
-              <Thread $isActive={location.pathname === "/thread"} />
-              <span>Thread</span>
-            </FooterListItem>
-          </Link>
-          <FooterListItem>
-            <Logout />
-            <span>Log out</span>
-          </FooterListItem>
-        </FooterList>
-      </SidebarFooter>
-      <LogoContainer>
-        <LogoImage src={monolog} alt="monolog-logo" />
-      </LogoContainer>
-    </Wrapper>
+    <ClosedWrapper>
+      <Menu onClick={() => setIsOpen(true)} />
+    </ClosedWrapper>
   );
 };
 
@@ -143,6 +152,22 @@ const LogoImage = styled.img`
   width: 170px;
   height: 36px;
   object-fit: cover;
+`;
+
+const ClosedWrapper = styled.div`
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 50px;
+  background-color: #2e2e2e;
+`;
+
+const Menu = styled(_Menu)`
+  width: 15px;
+  height: 15px;
+  fill: #ffffff;
 `;
 
 export default Sidebar;
