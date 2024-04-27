@@ -6,6 +6,7 @@ import { useState } from "react";
 const data = processListObj.processList.map((process) => {
   return {
     ...process,
+    processName: process.processName.replace("process", "#"),
     expectOutput: process.expectOutput - process.output,
   };
 });
@@ -26,7 +27,7 @@ const ProcessListChart = () => {
       <ResponsiveContainer width={"100%"} height={"100%"}>
         <ComposedChart data={data} margin={{ top: 50 }}>
           <XAxis dataKey="processName" />
-          <YAxis label={{ value: "(pcs)", angle: 0, position: "top" }} />
+          <YAxis label={{ value: "(pcs)", angle: 0, position: "top" }} tick={false} />
           <Legend wrapperStyle={{ top: 0 }} />
           <Bar
             isAnimationActive={false}
