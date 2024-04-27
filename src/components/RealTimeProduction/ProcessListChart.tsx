@@ -21,7 +21,7 @@ const ProcessListChart = () => {
     setActiveIndex(-1);
   };
 
-  // @ts-expect-error tick -> (props:any) => ReactElement
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const customTick = ({ x, y, payload }: any) => {
     return (
       <text
@@ -79,6 +79,7 @@ const Wrapper = styled.div`
   height: 400px;
   border: 1px solid #dedfdf;
   border-radius: 10px;
+  background-color: #ffffff;
 `;
 
 export default ProcessListChart;
