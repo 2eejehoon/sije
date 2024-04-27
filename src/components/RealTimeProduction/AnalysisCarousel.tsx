@@ -72,7 +72,7 @@ const AnalysisCarousel = () => {
 
 const Wrapper = styled.div`
   padding: 24px;
-  width: 560px;
+  width: 440px;
   border: 1px solid #e6e7e9;
   border-radius: 8px;
 `;
@@ -149,13 +149,13 @@ const ProfileName = styled.span`
 const PrevButton = styled.div`
   position: absolute;
   top: 40%;
-  left: 0;
+  left: -5px;
 `;
 
 const NextButton = styled.div`
   position: absolute;
   top: 40%;
-  right: 0;
+  right: -5px;
 `;
 
 export default AnalysisCarousel;

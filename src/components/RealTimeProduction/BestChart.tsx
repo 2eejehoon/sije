@@ -73,9 +73,8 @@ const BestChart = () => {
 };
 
 const Wrapper = styled.div`
-  flex: 2.8 1 0;
   display: flex;
-  min-width: 280px;
+  min-width: 260px;
   border: 1px solid #e6e7e9;
   border-radius: 8px;
 `;

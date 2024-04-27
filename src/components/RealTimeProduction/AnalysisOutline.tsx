@@ -39,8 +39,7 @@ const AnalysisOutline = () => {
 };
 
 const Wrapper = styled.div`
-  flex: 1.8 1 0;
-  min-width: 180px;
+  width: 180px;
   height: 100%;
   padding: 12px 16px 12px 16px;
   gap: 8px;
