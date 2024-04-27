@@ -4,8 +4,6 @@ import styled from "styled-components";
 const SidebarNavigation = () => {
   const location = useLocation();
 
-  console.log(location);
-
   return (
     <Wrapper>
       <List>
