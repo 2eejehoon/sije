@@ -1,15 +1,26 @@
 import styled from "styled-components";
 import SiderbarUserinfo from "./SidebarUserInfo";
 import SidebarNavigation from "./SidebarNavigation";
+import _ArrowLeft from "../../../assets/svg/arrow-left.svg?react";
+import _Master from "../../../assets/svg/master.svg?react";
+import _Thread from "../../../assets/svg/thread.svg?react";
+import _Logout from "../../../assets/svg/logout.svg?react";
 import monolog from "/png/monolog.png";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const Sidebar = () => {
   const location = useLocation();
+  const router = useNavigate();
+
+  const handleArrowLeftClick = () => {
+    router("/");
+  };
 
   return (
     <Wrapper>
-      <SidebarHeader></SidebarHeader>
+      <SidebarHeader>
+        <ArrowLeft onClick={handleArrowLeftClick} />
+      </SidebarHeader>
       <SidebarMain>
         <SiderbarUserinfo />
         <SidebarNavigation />
@@ -18,15 +29,18 @@ const Sidebar = () => {
         <FooterList>
           <Link to="/master">
             <FooterListItem $isActive={location.pathname === "/master"}>
+              <Master $isActive={location.pathname === "/master"} />
               <span>Master</span>
             </FooterListItem>
           </Link>
           <Link to="/thread">
             <FooterListItem $isActive={location.pathname === "/thread"}>
+              <Thread $isActive={location.pathname === "/thread"} />
               <span>Thread</span>
             </FooterListItem>
           </Link>
           <FooterListItem>
+            <Logout />
             <span>Log out</span>
           </FooterListItem>
         </FooterList>
@@ -52,6 +66,15 @@ const SidebarHeader = styled.div`
   width: 100%;
   min-height: 40px;
   display: flex;
+`;
+
+const ArrowLeft = styled(_ArrowLeft)`
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 20px;
+  height: 20px;
+  fill: #ffffff;
 `;
 
 const SidebarMain = styled.div`
@@ -90,6 +113,26 @@ const FooterListItem = styled.li<{ $isActive?: boolean }>`
   font-weight: 500;
   font-size: 14px;
   line-height: 19.6px;
+`;
+
+const Master = styled(_Master)<{ $isActive?: boolean }>`
+  width: 20px;
+  height: 20px;
+  stroke: ${({ $isActive = false }) => ($isActive ? "#ffffff" : "#8C8F94")};
+  fill: ${({ $isActive = false }) => ($isActive ? "#ffffff" : "#8C8F94")};
+`;
+
+const Thread = styled(_Thread)<{ $isActive?: boolean }>`
+  width: 20px;
+  height: 20px;
+  stroke: ${({ $isActive = false }) => ($isActive ? "#ffffff" : "#8C8F94")};
+  fill: ${({ $isActive = false }) => ($isActive ? "#ffffff" : "#8C8F94")};
+`;
+
+const Logout = styled(_Logout)`
+  width: 20px;
+  height: 20px;
+  fill: "#8C8F94";
 `;
 
 const LogoContainer = styled.div`

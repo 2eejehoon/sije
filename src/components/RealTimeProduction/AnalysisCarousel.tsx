@@ -1,11 +1,11 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import Slider from "react-slick";
 import kimsije from "/png/kimsije.png";
-import carouselPrevButton from "/svg/carousel-prev-button.svg";
-import carouselNextButton from "/svg/carousel-next-button.svg";
+import _PrevButton from "../../assets/svg/carousel-prev-button.svg?react";
+import _NextButton from "../../assets/svg/carousel-next-button.svg?react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useRef } from "react";
 
 const AnalysisCarousel = () => {
   const sliderRef = useRef<Slider>(null);
@@ -33,12 +33,8 @@ const AnalysisCarousel = () => {
         {[1, 2, 3, 4, 5].map((_, index) => {
           return (
             <Slide key={index}>
-              <PrevButton onClick={onPrevClick}>
-                <img src={carouselPrevButton} alt="carousel-prev-button" />
-              </PrevButton>
-              <NextButton onClick={onNextClick}>
-                <img src={carouselNextButton} alt="carousel-next-button" />
-              </NextButton>
+              <PrevButton onClick={onPrevClick} />
+              <NextButton onClick={onNextClick} />
               <Flexbox>
                 <ProcessDescription>
                   <ProcessNumber>#38</ProcessNumber>
@@ -147,14 +143,18 @@ const ProfileName = styled.span`
   line-height: 18.2px;
 `;
 
-const PrevButton = styled.div`
+const PrevButton = styled(_PrevButton)`
   position: absolute;
+  width: 20px;
+  height: 20px;
   top: 40%;
   left: -5px;
 `;
 
-const NextButton = styled.div`
+const NextButton = styled(_NextButton)`
   position: absolute;
+  width: 20px;
+  height: 20px;
   top: 40%;
   right: -5px;
 `;

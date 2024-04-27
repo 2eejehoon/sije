@@ -1,7 +1,7 @@
 import BaseLayout from "../layouts/BaseLayout";
 
 const HomePage = () => {
-  return <BaseLayout>Home</BaseLayout>;
+  return <BaseLayout></BaseLayout>;
 };
 
 export default HomePage;
