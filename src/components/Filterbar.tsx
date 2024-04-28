@@ -11,7 +11,7 @@ const Filterbar = () => {
       </Select>
       <Select defaultValue="A-1">
         {["1", "2", "3"].map((number) => {
-          return <Select.Option key={number} value={`A ${number}`}>{`A ${number}`}</Select.Option>;
+          return <Select.Option key={number} value={`A ${number}`}>{`A-${number}`}</Select.Option>;
         })}
       </Select>
       <Divider />
