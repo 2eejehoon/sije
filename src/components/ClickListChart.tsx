@@ -14,7 +14,7 @@ const ClickListChart = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const customTick = ({ x, y, payload }: any) => {
     return (
-      <text x={x} y={y} dy={16} textAnchor="middle" fill="#8C8F94">
+      <text x={x} y={y} dy={16} textAnchor="right" fill="#8C8F94" fontSize={14} fontWeight={400}>
         {formatTime(new Date(payload.value))}
       </text>
     );
