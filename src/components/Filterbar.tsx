@@ -1,13 +1,18 @@
 import styled from "styled-components";
+import Select from "./Select";
 
 const Filterbar = () => {
   return (
     <Wrapper>
-      <Select>
-        <option>SJ A</option>
+      <Select defaultValue="SJ A">
+        {["A", "B", "C", "D", "E", "F", "G", "H", "I"].map((alphabet) => {
+          return <Select.Option key={alphabet} value={`SJ ${alphabet}`}>{`SJ ${alphabet}`}</Select.Option>;
+        })}
       </Select>
-      <Select>
-        <option>A-1</option>
+      <Select defaultValue="A-1">
+        {["1", "2", "3"].map((number) => {
+          return <Select.Option key={number} value={`A ${number}`}>{`A ${number}`}</Select.Option>;
+        })}
       </Select>
       <Divider />
       <Production>WL02Y018-RE2-001</Production>
@@ -21,13 +26,6 @@ const Wrapper = styled.div`
   width: 100%;
   height: 36px;
   gap: 12px;
-`;
-
-const Select = styled.select`
-  position: relative;
-  padding: 8px 12px 8px 12px;
-  border: 1px solid #dedfdf;
-  border-radius: 10px;
 `;
 
 const Divider = styled.span`
